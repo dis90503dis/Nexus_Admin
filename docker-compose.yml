@@ -5,6 +5,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: nexus-backend
+    command: npm run dev
     ports:
       - "8080:3000"
     volumes:

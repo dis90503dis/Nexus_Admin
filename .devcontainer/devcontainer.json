@@ -1,0 +1,8 @@
+{
+  "name": "Nexus Admin Backend",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "backend",
+  "workspaceFolder": "/app",
+  "overrideCommand": false,
+  "shutdownAction": "none"
+}

@@ -2,7 +2,9 @@
   "name": "nexus-backend",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server.js"
+    "dev": "nodemon --legacy-watch --watch src --ext ts --exec tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "express": "^5.3.0"
@@ -10,6 +12,7 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.6",
+    "nodemon": "^3.1.14",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
