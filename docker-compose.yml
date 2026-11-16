@@ -1,0 +1,28 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nexus-backend
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./backend:/app
+      - backend_node_modules:/app/node_modules
+
+  db:
+    image: postgres:17
+    container_name: nexus-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: nexus_user
+      POSTGRES_PASSWORD: local_dev_password
+      POSTGRES_DB: nexus_admin
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+  backend_node_modules:
